@@ -6,6 +6,7 @@ import java.util.List;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -91,10 +92,25 @@ public class Minesweeper extends Application {
 
 	@Override
 	public void start(Stage st) throws Exception {
+		Alert start = new Alert(Alert.AlertType.INFORMATION);
+		
+		
 		scene = new Scene(Minesweeper.createScreen());
 		
 		st.setScene(scene);
 		st.show();
+		start.setTitle("Instructions!");
+		start.setHeaderText("Welcome to MineSweeper!");
+		start.setContentText("Task: You need to find all the bombs that "
+				+ "are hidden on the board! Be careful though, if you hit a bomb, you lose! If you come"
+				+ " across a place in which you believe a bomb resides, flag it! Once you find all the"
+				+ " bombs you will ge given a trophy as the winner!"
+				+ "\nGood Luck!! :)"
+				+ "\nControls:"
+				+ "\nRigth Click: Flag"
+				+ "\nLeft Click: Check position on the  board");
+		start.showAndWait();
+		
 	}
 		
 	
