@@ -2,15 +2,12 @@ package Minesweeper;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import javafx.scene.shape.Rectangle;
 
 public class Minesweeper extends Application {
 	
@@ -18,6 +15,7 @@ public class Minesweeper extends Application {
 	static int SIZE = 40;
 	static Scene scene;
 	private static int H = 600;
+	static int bombs = 0;
 	private static final int xTiles = H/SIZE;
 	private static final int yTiles = H/SIZE;
 	private static Box[][] grid = new Box[xTiles][yTiles];
@@ -41,6 +39,7 @@ public class Minesweeper extends Application {
 				
 				
 				if(box.hasBomb) {
+					bombs++;
 					continue;
 				}
 				
