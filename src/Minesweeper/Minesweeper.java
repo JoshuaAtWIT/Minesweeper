@@ -88,19 +88,18 @@ public class Minesweeper extends Application {
 		
 		return surround;
 	}
-	
-	
-	public static void main(String[] args) {
-		launch(args);
-	}
-	
+
+
 	@Override
-	public void start(Stage st) throws Exception{
-		scene = new Scene(createScreen());
+	public void start(Stage st) throws Exception {
+		scene = new Scene(Minesweeper.createScreen());
 		
 		st.setScene(scene);
 		st.show();
 	}
+		
+	
+	
 	
 	
 
